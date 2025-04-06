@@ -78,6 +78,19 @@ Completion for `describe-face'." t)
 Complete faces with preview.
 Actions are provided by default for describing or customizing the
 selected face." t)
+(autoload 'counsel-minor "counsel" "\
+Enable or disable minor mode.
+
+Disabled minor modes are prefixed with \"+\", and
+selecting one of these will enable it.
+Enabled minor modes are prefixed with \"-\", and
+selecting one of these will enable it.
+
+Additional actions:\\<ivy-minibuffer-map>
+
+  \\[ivy-dispatching-done] d: Go to minor mode definition
+  \\[ivy-dispatching-done] h: Describe minor mode" t)
+(autoload 'counsel-major "counsel" nil t)
 (autoload 'counsel-git "counsel" "\
 Find file in the current Git repository.
 INITIAL-INPUT can be given as the initial minibuffer input.
@@ -379,19 +392,6 @@ Additional actions:
 (fn &optional DIR)" t)
 (autoload 'counsel-compile-env "counsel" "\
 Update `counsel-compile-env' interactively." t)
-(autoload 'counsel-minor "counsel" "\
-Enable or disable minor mode.
-
-Disabled minor modes are prefixed with \"+\", and
-selecting one of these will enable it.
-Enabled minor modes are prefixed with \"-\", and
-selecting one of these will enable it.
-
-Additional actions:\\<ivy-minibuffer-map>
-
-  \\[ivy-dispatching-done] d: Go to minor mode definition
-  \\[ivy-dispatching-done] h: Describe minor mode" t)
-(autoload 'counsel-major "counsel" nil t)
 (autoload 'counsel-compilation-errors "counsel" "\
 Compilation errors." t)
 (autoload 'counsel-flycheck "counsel" "\

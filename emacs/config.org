@@ -68,8 +68,7 @@ To keep this =config.org= a reasonable length, I have moved a lot of code to ind
 
 * ALL THE ICONS
 This is an icon set that can be used with dashboard, dired, ibuffer and other Emacs programs.
-  
-#+begin_src emacs-lisp
+ begin_src emacs-lisp
 (use-package all-the-icons
   :ensure t
   :if (display-graphic-p))
@@ -476,7 +475,8 @@ You can use the bindings CTRL plus =/- for zooming in/out.  You can also use CTR
     "t o" '(org-mode :wk "Toggle org mode")
     "t r" '(rainbow-mode :wk "Toggle rainbow mode")
     "t t" '(visual-line-mode :wk "Toggle truncated lines")
-    "t v" '(vterm-toggle :wk "Toggle vterm"))
+    "t v" '(vterm-toggle :wk "Toggle vterm")
+    "t p" '(package-install :wk "Package Installer"))
 
   (dt/leader-keys
     "w" '(:ignore t :wk "Windows")

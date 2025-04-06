@@ -4,13 +4,6 @@
 (require 'buffer-move)   ;; Buffer-move for better window management
 (require 'app-launchers) ;; Use emacs as a run launcher like dmenu (experimental)
 
-(use-package all-the-icons
-  :ensure t
-  :if (display-graphic-p))
-
-(use-package all-the-icons-dired
-  :hook (dired-mode . (lambda () (all-the-icons-dired-mode t))))
-
 (setq backup-directory-alist '((".*" . "~/.local/share/Trash/files")))
 
 (use-package company
@@ -348,7 +341,8 @@
     "t o" '(org-mode :wk "Toggle org mode")
     "t r" '(rainbow-mode :wk "Toggle rainbow mode")
     "t t" '(visual-line-mode :wk "Toggle truncated lines")
-    "t v" '(vterm-toggle :wk "Toggle vterm"))
+    "t v" '(vterm-toggle :wk "Toggle vterm")
+    "t p" '(package-install :wk "Package Installer"))
 
   (dt/leader-keys
     "w" '(:ignore t :wk "Windows")

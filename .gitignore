@@ -1,0 +1,8 @@
+# Ignora TUDO no diretório .config
+/*
+# Exceto estas pastas (e seus conteúdos)
+!/emacs/
+!/fish/
+!/alacritty/
+# Opcional: inclua o próprio .gitignore se quiser versioná-lo
+!.gitignore
