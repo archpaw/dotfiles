@@ -4,5 +4,9 @@
 !/emacs/
 !/fish/
 !/alacritty/
+!/polybar/
+!/hypr/
+!/qtile/
+!/bspwm/
 # Opcional: inclua o próprio .gitignore se quiser versioná-lo
 !.gitignore
