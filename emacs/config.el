@@ -132,15 +132,15 @@
 
 (set-face-attribute 'default nil
   :font "JetBrains Mono"
-  :height 110
+  :height 120
   :weight 'medium)
 (set-face-attribute 'variable-pitch nil
   :font "Ubuntu"
-  :height 120
+  :height 130
   :weight 'medium)
 (set-face-attribute 'fixed-pitch nil
   :font "JetBrains Mono"
-  :height 110
+  :height 120
   :weight 'medium)
 ;; Makes commented text and keywords italics.
 ;; This is working in emacsclient but not emacs.
