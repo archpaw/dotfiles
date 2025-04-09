@@ -9,5 +9,6 @@
 !/qtile/
 !/bspwm/
 !/autostart/
+!/i3/
 # Opcional: inclua o próprio .gitignore se quiser versioná-lo
 !.gitignore
