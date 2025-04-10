@@ -1,4 +1,4 @@
-#!/usr/bin/env bash 
+#!/usr/bin/env bash
 
 COLORSCHEME=DoomOne
 
@@ -13,8 +13,12 @@ conky -c "$HOME"/.config/conky/qtile/01/"$COLORSCHEME".conf || echo "Couldn't st
 
 ### UNCOMMENT ONLY ONE OF THE FOLLOWING THREE OPTIONS! ###
 # 1. Uncomment to restore last saved wallpaper
-xargs xwallpaper --stretch < ~/.cache/wall &
+xargs xwallpaper --stretch <~/.cache/wall &
 # 2. Uncomment to set a random wallpaper on login
 # find /usr/share/backgrounds/dtos-backgrounds/ -type f | shuf -n 1 | xargs xwallpaper --stretch &
 # 3. Uncomment to set wallpaper with nitrogen
 # nitrogen --restore &
+$HOME/.config/autostart/xinputI3.sh &
+xrandr --output HDMI-A-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DisplayPort-0 --mode 1440x900 --pos 1920x0 --rotate normal &
+run variety &
+run sxhkd -c ~/.config/qtile/sxhkd/sxhkdrc &

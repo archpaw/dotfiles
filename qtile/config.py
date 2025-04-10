@@ -33,8 +33,9 @@ import colors
 
 mod = "mod4"              # Sets mod key to SUPER/WINDOWS
 myTerm = "alacritty"      # My terminal of choice
-myBrowser = "brave"       # My browser of choice
+myBrowser = "firefox"       # My browser of choice
 myEmacs = "emacsclient -c -a 'emacs' " # The space at the end is IMPORTANT!
+logOut = "archlinux-logout"
 
 # Allows you to input a name when adding treetab section.
 @lazy.layout.function
@@ -48,7 +49,7 @@ def minimize_all(qtile):
     for win in qtile.current_group.windows:
         if hasattr(win, "toggle_minimize"):
             win.toggle_minimize()
-           
+
 # A function for toggling between MAX and MONADTALL layouts
 @lazy.function
 def maximize_by_switching_layout(qtile):
@@ -69,7 +70,8 @@ keys = [
     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "shift"], "q", lazy.spawn("dm-logout -r"), desc="Logout menu"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    
+    Key([mod], "x", lazy.spawn(logOut), desc="Spawn a command using a prompt widget"),
+
     # Switch between windows
     # Some layouts like 'monadtall' only need to use j/k to move
     # through the stack, but other layouts like 'columns' will
@@ -112,7 +114,7 @@ keys = [
     # Treetab prompt
     Key([mod, "shift"], "a", add_treetab_section, desc='Prompt to add new section in treetab'),
 
-    # Grow/shrink windows left/right. 
+    # Grow/shrink windows left/right.
     # This is mainly for the 'monadtall' and 'monadwide' layouts
     # although it does also work in the 'bsp' and 'columns' layouts.
     Key([mod], "equal",
@@ -141,7 +143,7 @@ keys = [
     # Switch focus of monitors
     Key([mod], "period", lazy.next_screen(), desc='Move focus to next monitor'),
     Key([mod], "comma", lazy.prev_screen(), desc='Move focus to prev monitor'),
-    
+
     # Emacs programs launched using the key chord SUPER+e followed by 'key'
     KeyChord([mod],"e", [
         Key([], "e", lazy.spawn(myEmacs), desc='Emacs Dashboard'),
@@ -194,7 +196,7 @@ for i in range(len(group_names)):
             layout=group_layouts[i].lower(),
             label=group_labels[i],
         ))
- 
+
 for i in groups:
     keys.extend(
         [
@@ -282,11 +284,11 @@ def init_widgets_list():
                  foreground = colors[1]
         ),
         widget.GroupBox(
-                 fontsize = 12,
+                 fontsize = 22,
                  margin_y = 5,
                  margin_x = 8,
                  padding_y = 0,
-                 padding_x = 1,
+                 padding_x = 0,
                  borderwidth = 3,
                  active = colors[8],
                  inactive = colors[9],
@@ -325,17 +327,17 @@ def init_widgets_list():
                  update_interval = 300,
                  func = lambda: subprocess.check_output("printf $(uname -r)", shell=True, text=True),
                  foreground = colors[3],
-                 padding = 6, 
+                 padding = 6,
                  fmt = '❤  {}',
                  ),
         widget.CPU(
                  format = ' Cpu: {load_percent}%',
                  foreground = colors[4],
-                 padding = 6, 
+                 padding = 6,
                  ),
         widget.Memory(
                  foreground = colors[8],
-                 padding = 6, 
+                 padding = 6,
                  mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e htop')},
                  format = '{MemUsed: .0f}{mm}',
                  fmt = '🖥  Mem: {} used',
@@ -343,7 +345,7 @@ def init_widgets_list():
         widget.DF(
                  update_interval = 60,
                  foreground = colors[5],
-                 padding = 6, 
+                 padding = 6,
                  mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e df')},
                  partition = '/',
                  #format = '[{p}] {uf}{m} ({r:.0f}%)',
@@ -353,17 +355,12 @@ def init_widgets_list():
                  ),
         widget.Volume(
                  foreground = colors[7],
-                 padding = 6, 
+                 padding = 6,
                  fmt = '🕫  Vol: {}',
-                 ),
-        widget.KeyboardLayout(
-                 foreground = colors[4],
-                 padding = 6, 
-                 fmt = '⌨  Kbd: {}',
                  ),
         widget.Clock(
                  foreground = colors[8],
-                 padding = 6, 
+                 padding = 6,
                  format = "⏱  %a, %b %d - %H:%M",
                  ),
         widget.Systray(padding = 3),
@@ -374,7 +371,7 @@ def init_widgets_list():
 
 def init_widgets_screen1():
     widgets_screen1 = init_widgets_list()
-    return widgets_screen1 
+    return widgets_screen1
 
 # All other monitors' bars will display everything but widgets 22 (systray) and 23 (spacer).
 def init_widgets_screen2():
