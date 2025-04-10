@@ -10,5 +10,8 @@
 !/bspwm/
 !/autostart/
 !/i3/
+!/qtile/
+!/sxhkd/
+!/doom/
 # Opcional: inclua o próprio .gitignore se quiser versioná-lo
 !.gitignore
