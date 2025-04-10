@@ -350,7 +350,7 @@ for_window [class="Spotify|spotify"] move to workspace 10
 # ArcoLinux Welcome App
 exec --no-startup-id dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
 exec --no-startup-id dex $HOME/.config/autostart/screenResolution.sh
-exec --no-startup-id emacs --daemon
+exec --no-startup-id /usr/bin/emacs --daemon
 
 # Autotiling
 exec_always --no-startup-id autotiling

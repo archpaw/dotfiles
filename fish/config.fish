@@ -144,10 +144,11 @@ end
 
 ### ALIASES ###
 #Leonam
-alias upp='./home/lm/Documentos/git/scripts/arch/update.sh'
-alias fupp='./home/lm/Documentos/git/scripts/arch/full-update.sh'
+alias upp='./Documentos/git/scripts/arch/update.sh'
+alias fupp='./Documentos/git/scripts/arch/full-update.sh'
 alias cdgit='cd /home/lm/Documentos/git/'
 alias cdg='cd .config'
+alias updspd='./.config/autostart/xinputI3.sh'
 
 # navigation
 alias ..='cd ..'

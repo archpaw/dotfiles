@@ -34,6 +34,9 @@ import colors
 mod = "mod4"              # Sets mod key to SUPER/WINDOWS
 myTerm = "alacritty"      # My terminal of choice
 myBrowser = "firefox"       # My browser of choice
+myFiles = "thunar"       # My file manager of choice
+myCode = "code"
+myMusic = "spotify"
 myEmacs = "emacsclient -c -a 'emacs' " # The space at the end is IMPORTANT!
 logOut = "archlinux-logout"
 
@@ -62,15 +65,20 @@ def maximize_by_switching_layout(qtile):
 keys = [
     # The essentials
     Key([mod], "Return", lazy.spawn(myTerm), desc="Terminal"),
-    Key([mod, "shift"], "Return", lazy.spawn("rofi -show drun"), desc='Run Launcher'),
+    Key([mod, "shift"], "d", lazy.spawn("rofi -show drun"), desc='Run Launcher'),
+    Key([mod, "shift"], "Return", lazy.spawn(myFiles), desc='Run thunar'),
     Key([mod], "w", lazy.spawn(myBrowser), desc='Web browser'),
+    Key([mod], "F1", lazy.spawn(myBrowser), desc="Web browser"),
+    Key([mod], "F2", lazy.spawn(myCode), desc="code"),
+    Key([mod], "F3", lazy.spawn(myEmacs), desc="emacs"),
+    Key([mod], "F4", lazy.spawn(myMusic), desc="spotify"),
     Key([mod], "b", lazy.hide_show_bar(position='all'), desc="Toggles the bar to show/hide"),
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod, "shift"], "c", lazy.window.kill(), desc="Kill focused window"),
+    Key([mod, "shift"], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
-    Key([mod, "shift"], "q", lazy.spawn("dm-logout -r"), desc="Logout menu"),
+    # Key([mod, "shift"], "q", lazy.spawn("dm-logout -r"), desc="Logout menu"),
+    Key([mod], "x", lazy.spawn(logOut), desc="Arco logout menu"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    Key([mod], "x", lazy.spawn(logOut), desc="Spawn a command using a prompt widget"),
 
     # Switch between windows
     # Some layouts like 'monadtall' only need to use j/k to move

@@ -3,11 +3,16 @@
 COLORSCHEME=DoomOne
 
 ### AUTOSTART PROGRAMS ###
+#starting utility applications at boot time
+run variety &
+variety &
+numlockx on &
 lxsession &
 picom --daemon &
 /usr/bin/emacs --daemon &
 nm-applet &
 "$HOME"/.screenlayout/layout.sh &
+# "$HOME"/home/lm/.config/qtile/sxhkd/sxhkdrc &
 sleep 1
 conky -c "$HOME"/.config/conky/qtile/01/"$COLORSCHEME".conf || echo "Couldn't start conky."
 
@@ -20,5 +25,6 @@ xargs xwallpaper --stretch <~/.cache/wall &
 # nitrogen --restore &
 $HOME/.config/autostart/xinputI3.sh &
 xrandr --output HDMI-A-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DisplayPort-0 --mode 1440x900 --pos 1920x0 --rotate normal &
-run variety &
-run sxhkd -c ~/.config/qtile/sxhkd/sxhkdrc &
+
+#start sxhkd to replace Qtile native key-bindings
+# run sxhkd -c /home/lm/.config/qtile/sxhkd/sxhkdrc &
