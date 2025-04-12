@@ -32,7 +32,7 @@ from libqtile.lazy import lazy
 import colors
 
 mod = "mod4"              # Sets mod key to SUPER/WINDOWS
-myTerm = "alacritty"      # My terminal of choice
+myTerm = "cosmic-term"      # My terminal of choice
 myBrowser = "firefox"       # My browser of choice
 myBrowser2 = "brave"       # My browser of choice
 myFiles = "pcmanfm"       # My file manager of choice
@@ -193,7 +193,7 @@ group_names = ["1", "2", "3", "4"]
 
 #group_labels = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
 group_labels = ["DEV", "WWW", "SYS", "MUS", "VBOX", "CHAT", "DOC", "VID", "GFX", "MISC"]
-# group_labels = ["", "", "", "", "", "", "𝦝", "", "", "⛨"]
+#group_labels = ["", "", "", "", "", "", "𝦝", "", "", "⛨"]
 #group_labels = [" ", " ", " ", " ", " ", " ", "⛨ ", " ", " "]
 
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall"]
