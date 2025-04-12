@@ -1,9 +1,8 @@
 #!/bin/bash
 
 function run {
-  if ! pgrep -x $(basename $1 | head -c 15) 1>/dev/null;
-  then
-    $@&
+  if ! pgrep -x $(basename $1 | head -c 15) 1>/dev/null; then
+    $@ &
   fi
 }
 
@@ -17,7 +16,7 @@ function run {
 #xrandr --output LVDS1 --mode 1366x768 --output DP3 --mode 1920x1080 --right-of LVDS1
 #xrandr --output HDMI2 --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off
 #autorandr horizontal
-xrandr --output DVI-I-0 --primary --mode 1600x900 --pos 0x0 --rotate normal --output DVI-I-1 --off --output HDMI-0 --off --output DVI-D-0 --mode 1440x900 --pos 1600x0 --rotate normal
+xrandr --output HDMI-A-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DisplayPort-0 --mode 1440x900 --pos 1920x0 --rotate normal
 
 #change your keyboard if you need it
 #setxkbmap -layout be
@@ -40,7 +39,6 @@ run dex $HOME/.config/autostart/arcolinux-welcome-app.desktop &
 
 #start sxhkd to replace Qtile native key-bindings
 run sxhkd -c ~/.config/qtile/sxhkd/sxhkdrc &
-
 
 #starting utility applications at boot time
 run variety &

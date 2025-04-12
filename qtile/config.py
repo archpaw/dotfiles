@@ -34,6 +34,7 @@ import colors
 mod = "mod4"              # Sets mod key to SUPER/WINDOWS
 myTerm = "alacritty"      # My terminal of choice
 myBrowser = "firefox"       # My browser of choice
+myBrowser2 = "brave"       # My browser of choice
 myFiles = "thunar"       # My file manager of choice
 myCode = "code"
 myMusic = "spotify"
@@ -67,7 +68,7 @@ keys = [
     Key([mod], "Return", lazy.spawn(myTerm), desc="Terminal"),
     Key([mod, "shift"], "d", lazy.spawn("rofi -show drun"), desc='Run Launcher'),
     Key([mod, "shift"], "Return", lazy.spawn(myFiles), desc='Run thunar'),
-    Key([mod], "w", lazy.spawn(myBrowser), desc='Web browser'),
+    Key([mod], "w", lazy.spawn(myBrowser2), desc='Web browser 2'),
     Key([mod], "F1", lazy.spawn(myBrowser), desc="Web browser"),
     Key([mod], "F2", lazy.spawn(myCode), desc="code"),
     Key([mod], "F3", lazy.spawn(myEmacs), desc="emacs"),
@@ -187,11 +188,12 @@ keys = [
 ]
 
 groups = []
-group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+group_names = ["1", "2", "3", "4"]
+# group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
 #group_labels = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
-#group_labels = ["DEV", "WWW", "SYS", "DOC", "VBOX", "CHAT", "MUS", "VID", "GFX", "MISC"]
-group_labels = ["", "", "", "", "", "", "𝦝", "", "", "⛨"]
+group_labels = ["DEV", "WWW", "SYS", "MUS", "VBOX", "CHAT", "DOC", "VID", "GFX", "MISC"]
+# group_labels = ["", "", "", "", "", "", "𝦝", "", "", "⛨"]
 #group_labels = [" ", " ", " ", " ", " ", " ", "⛨ ", " ", " "]
 
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall"]
@@ -235,7 +237,7 @@ layout_theme = {"border_width": 2,
 
 layouts = [
     layout.MonadTall(**layout_theme),
-    layout.MonadWide(**layout_theme),
+    # layout.MonadWide(**layout_theme),
     layout.Tile(**layout_theme),
     layout.Max(**layout_theme),
     #layout.Bsp(**layout_theme),
@@ -292,11 +294,11 @@ def init_widgets_list():
                  foreground = colors[1]
         ),
         widget.GroupBox(
-                 fontsize = 22,
+                 fontsize = 8,
                  margin_y = 5,
-                 margin_x = 8,
+                 margin_x = 5,
                  padding_y = 0,
-                 padding_x = 0,
+                 padding_x = 2,
                  borderwidth = 3,
                  active = colors[8],
                  inactive = colors[9],
@@ -331,13 +333,13 @@ def init_widgets_list():
                  padding = 4,
                  max_chars = 40
                  ),
-        widget.GenPollText(
-                 update_interval = 300,
-                 func = lambda: subprocess.check_output("printf $(uname -r)", shell=True, text=True),
-                 foreground = colors[3],
-                 padding = 6,
-                 fmt = '❤  {}',
-                 ),
+        # widget.GenPollText(
+        #          update_interval = 300,
+        #          func = lambda: subprocess.check_output("printf $(uname -r)", shell=True, text=True),
+        #          foreground = colors[3],
+        #          padding = 6,
+        #          fmt = '❤  {}',
+        #          ),
         widget.CPU(
                  format = ' Cpu: {load_percent}%',
                  foreground = colors[4],
@@ -369,7 +371,7 @@ def init_widgets_list():
         widget.Clock(
                  foreground = colors[8],
                  padding = 6,
-                 format = "⏱  %a, %b %d - %H:%M",
+                 format = "⏱ %d %b - %H:%M",
                  ),
         widget.Systray(padding = 3),
         widget.Spacer(length = 8),
@@ -384,7 +386,7 @@ def init_widgets_screen1():
 # All other monitors' bars will display everything but widgets 22 (systray) and 23 (spacer).
 def init_widgets_screen2():
     widgets_screen2 = init_widgets_list()
-    del widgets_screen2[15:16]
+    del widgets_screen2[13:16]
     return widgets_screen2
 
 # For adding transparency to your bar, add (background="#00000000") to the "Screen" line(s)
