@@ -39,7 +39,7 @@ myFiles = "thunar"       # My file manager of choice
 myCode = "code"
 myMusic = "spotify"
 myEmacs = "emacsclient -c -a 'emacs' " # The space at the end is IMPORTANT!
-logOut = "archlinux-logout"
+logOut = "wlogout"
 
 # Allows you to input a name when adding treetab section.
 @lazy.layout.function
@@ -78,7 +78,7 @@ keys = [
     Key([mod, "shift"], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
     # Key([mod, "shift"], "q", lazy.spawn("dm-logout -r"), desc="Logout menu"),
-    Key([mod], "x", lazy.spawn(logOut), desc="Arco logout menu"),
+    Key([mod], "x", lazy.spawn(logOut), desc="logout menu"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 
     # Switch between windows
