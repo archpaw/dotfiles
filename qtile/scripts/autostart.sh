@@ -27,18 +27,15 @@ if [ $keybLayout = "be" ]; then
   cp $HOME/.config/qtile/config-azerty.py $HOME/.config/qtile/config.py
 fi
 
-#autostart ArcoLinux Welcome App
-run dex $HOME/.config/autostart/arcolinux-welcome-app.desktop &
-
 #Some ways to set your wallpaper besides variety or nitrogen
-feh --bg-fill /home/lm/Documentos/git/walls/70.png &
+#feh --bg-fill /home/lm/Documentos/git/walls/70.png &
 #wallpaper for other Arch based systems
 #feh --bg-fill /usr/share/archlinux-tweak-tool/data/wallpaper/wallpaper.png &
 # start the conky to learn the shortcuts
 # (conky -c $HOME/.config/qtile/scripts/system-overview) &
 
 #start sxhkd to replace Qtile native key-bindings
-run sxhkd -c ~/.config/qtile/sxhkd/sxhkdrc &
+#run sxhkd -c ~/.config/qtile/sxhkd/sxhkdrc &
 
 #starting utility applications at boot time
 run variety &

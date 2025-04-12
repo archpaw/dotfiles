@@ -1,1 +1,1 @@
-("~/.config/" "~/Documentos/git/dotfiles/" "~/Documentos/git/scripts/")
+("~/.config/" "~/Documentos/git/scripts/" "~/Documentos/git/dotfiles/")
