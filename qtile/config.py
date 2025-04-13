@@ -30,6 +30,15 @@ from libqtile import bar, extension, hook, layout, qtile, widget
 from libqtile.config import Click, Drag, Group, Key, KeyChord, Match, Screen
 from libqtile.lazy import lazy
 import colors
+from qtile_extras.widget.decorations import PowerLineDecoration, RectDecoration
+
+powerline = {
+    "decorations": [
+        RectDecoration(use_widget_background=True, padding_y=5, filled=True, radius=0),
+        PowerLineDecoration(path="arrow_right", padding_y=5)
+    ]
+}
+
 
 mod = "mod4"              # Sets mod key to SUPER/WINDOWS
 myTerm = "cosmic-term"      # My terminal of choice
