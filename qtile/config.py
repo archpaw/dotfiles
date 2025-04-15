@@ -41,14 +41,14 @@ powerline = {
 
 
 mod = "mod4"              # Sets mod key to SUPER/WINDOWS
-myTerm = "cosmic-term"      # My terminal of choice
+myTerm = "kitty"      # My terminal of choice
 myBrowser = "firefox"       # My browser of choice
 myBrowser2 = "brave"       # My browser of choice
-myFiles = "pcmanfm"       # My file manager of choice
+myFiles = "nautilus"       # My file manager of choice
 myCode = "code"
 myMusic = "spotify"
 myEmacs = "emacsclient -c -a 'emacs' " # The space at the end is IMPORTANT!
-logOut = "wlogout"
+logOut = "archlinux-logout"
 
 # Allows you to input a name when adding treetab section.
 @lazy.layout.function
