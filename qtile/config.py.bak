@@ -297,207 +297,103 @@ def search():
 def power():
     qtile.cmd_spawn("sh -c ~/.config/rofi/scripts/power")
 extension_defaults = widget_defaults.copy()
-def init_widgets_list():
-    widgets_list = [
-
-                widget.Spacer(length=15,
-                    background='#282738',
-                ),
-
-                widget.Image(
-                    filename='~/.config/qtile/Assets/launch_Icon.png',
-                    margin=2,
-                    background='#282738',
-                    mouse_callbacks={"Button1": power},
-                ),
-
-                widget.Image(
-                    filename='~/.config/qtile/Assets/6.png',
-                ),
-
-                widget.GroupBox(
-                    font="JetBrainsMono Nerd Font",
-                    fontsize=16,
-                    borderwidth=6,
-                    highlight_method='block',
-                    active='#CAA9E0',
-                    block_highlight_text_color="#91B1F0",
-                    highlight_color='#353446',
-                    inactive='#282738',
-                    foreground='#4B427E',
-                    background='#353446',
-                    this_current_screen_border='#353446',
-                    this_screen_border='#353446',
-                    other_current_screen_border='#353446',
-                    other_screen_border='#353446',
-                    urgent_border='#353446',
-                    rounded=True,
-                    disable_drag=True,
-                ),
-
-                widget.Spacer(
-                    length=8,
-                    background='#353446',
-                ),
-
-                widget.Image(
-                    filename='~/.config/qtile/Assets/1.png',
-                ),
-
-
-                widget.CurrentLayoutIcon(
-                    custom_icon_paths=["~/.config/qtile/Assets/layout"],
-                    background='#353446',
-                    scale=0.50,
-                ),
-
-                widget.Image(
-                    filename='~/.config/qtile/Assets/5.png',
-                ),
-
-                widget.TextBox(
-                    text=" ",
-                    font="Font Awesome 6 Free Solid",
-                    fontsize=13,
-                    background='#282738',
-                    foreground='#CAA9E0',
-                    mouse_callbacks={"Button1": search},
-                ),
-
-                widget.TextBox(
-                    fmt='Search',
-                    background='#282738',
-                    font="JetBrainsMono Nerd Font Bold",
-                    fontsize=13,
-                    foreground='#CAA9E0',
-                    mouse_callbacks={"Button1": search},
-                ),
-
-                widget.Image(
-                    filename='~/.config/qtile/Assets/4.png',
-                ),
-
-                widget.WindowName(
-                    background='#353446',
-                    font="JetBrainsMono Nerd Font Bold",
-                    fontsize=13,
-                    empty_group_string="Desktop",
-                    max_chars=130,
-                    foreground='#CAA9E0',
-                ),
-
-                widget.Image(
-                    filename='~/.config/qtile/Assets/3.png',
-                ),
-
-                widget.Systray(
-                    background='#282738',
-                    fontsize=2,
-                ),
-
-                widget.TextBox(
-                    text=' ',
-                    background='#282738',
-                ),
-
-                widget.Image(
-                    filename='~/.config/qtile/Assets/6.png',
-                    background='#353446',
-                ),
-
-                widget.TextBox(
-                    text="",
-                    font="Font Awesome 6 Free Solid",
-                    fontsize=13,
-                    background='#353446',
-                    foreground='#CAA9E0',
-                ),
-
-                widget.Memory(
-                    background='#353446',
-                    format='{MemUsed: .0f}{mm}',
-                    foreground='#CAA9E0',
-                    font="JetBrainsMono Nerd Font Bold",
-                    fontsize=13,
-                    update_interval=5,
-                ),
-
-                # widget.Image(
-                #     filename='~/.config/qtile/Assets/2.png',
-                # ),
-
-                # widget.Spacer(
-                #     length=8,
-                #     background='#353446',
-                # ),
-
-                # widget.TextBox(
-                #     text=" ",
-                #     font="Font Awesome 6 Free Solid",
-                #     fontsize=13,
-                #     background='#353446',
-                #     foreground='#CAA9E0',
-                # ),
-
-                # widget.Battery(
-                #     font="JetBrainsMono Nerd Font Bold",
-                #     fontsize=13,
-                #     background='#353446',
-                #     foreground='#CAA9E0',
-                #     format='{percent:2.0%}',
-                # ),
-
-                widget.Image(
-                    filename='~/.config/qtile/Assets/2.png',
-                ),
-
-                widget.Spacer(
-                    length=8,
-                    background='#353446',
-                ),
-
-                widget.TextBox(
-                    text=" ",
-                    font="Font Awesome 6 Free Solid",
-                    fontsize=13,
-                    background='#353446',
-                    foreground='#CAA9E0',
-                ),
-
-                widget.Volume(
-                    font="JetBrainsMono Nerd Font Bold",
-                    fontsize=13,
-                    background='#353446',
-                    foreground='#CAA9E0',
-                ),
-
-                widget.Image(
-                    filename='~/.config/qtile/Assets/5.png',
-                    background='#353446',
-                ),
-
-                widget.TextBox(
-                    text=" ",
-                    font="Font Awesome 6 Free Solid",
-                    fontsize=13,
-                    background='#282738',
-                    foreground='#CAA9E0',
-                ),
-
-                widget.Clock(
-                    format='%I:%M %p',
-                    background='#282738',
-                    foreground='#CAA9E0',
-                    font="JetBrainsMono Nerd Font Bold",
-                    fontsize=13,
-                ),
-
-                widget.Spacer(
-                    length=18,
-                    background='#282738',
-                ),
-    ]
-    return widgets_list
+ def init_widgets_list():
+     widgets_list = [
+         widget.Spacer(length = 12),
+         widget.Image(
+                  filename = "~/.config/qtile/icons/infinity-icon.png",
+                  scale = "False",
+                  mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm)},
+                  ),
+         widget.Prompt(
+                  font = "Ubuntu Mono",
+                  fontsize=14,
+                  foreground = colors[1]
+         ),
+         widget.GroupBox(
+                  fontsize = 8,
+                  margin_y = 5,
+                  margin_x = 5,
+                  padding_y = 0,
+                  padding_x = 2,
+                  borderwidth = 3,
+                  active = colors[8],
+                  inactive = colors[9],
+                  rounded = False,
+                  highlight_color = colors[2],
+                  highlight_method = "line",
+                  this_current_screen_border = colors[7],
+                  this_screen_border = colors [4],
+                  other_current_screen_border = colors[7],
+                  other_screen_border = colors[4],
+                  ),
+         widget.TextBox(
+                  text = '|',
+                  font = "Ubuntu Mono",
+                  foreground = colors[9],
+                  padding = 2,
+                  fontsize = 14
+                  ),
+         widget.CurrentLayout(
+                  foreground = colors[1],
+                  padding = 5
+                  ),
+         widget.TextBox(
+                  text = '|',
+                  font = "Ubuntu Mono",
+                  foreground = colors[9],
+                  padding = 2,
+                  fontsize = 14
+                  ),
+         widget.WindowName(
+                  foreground = colors[6],
+                  padding = 4,
+                  max_chars = 40
+                  ),
+         # widget.GenPollText(
+         #          update_interval = 300,
+         #          func = lambda: subprocess.check_output("printf $(uname -r)", shell=True, text=True),
+         #          foreground = colors[3],
+         #          padding = 6,
+         #          fmt = '❤  {}',
+         #          ),
+         widget.CPU(
+                  format = ' Cpu: {load_percent}%',
+                  foreground = colors[4],
+                  padding = 6,
+                  ),
+         widget.Memory(
+                  foreground = colors[8],
+                  padding = 6,
+                  mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e htop')},
+                  format = '{MemUsed: .0f}{mm}',
+                  fmt = '🖥  Mem: {} used',
+                  ),
+         widget.DF(
+                  update_interval = 60,
+                  foreground = colors[5],
+                  padding = 6,
+                  mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e df')},
+                  partition = '/',
+                  #format = '[{p}] {uf}{m} ({r:.0f}%)',
+                  format = '{uf}{m} free',
+                  fmt = '🖴  Disk: {}',
+                  visible_on_warn = False,
+                  ),
+         widget.Volume(
+                  foreground = colors[7],
+                  padding = 6,
+                  fmt = '🕫  Vol: {}',
+                  ),
+         widget.Clock(
+                  foreground = colors[8],
+                  padding = 6,
+                  format = "⏱ %d %b - %H:%M",
+                  ),
+         widget.Systray(padding = 3),
+         widget.Spacer(length = 8),
+         ]
+     return widgets_list
 
 def init_widgets_screen1():
     widgets_screen1 = init_widgets_list()
@@ -506,7 +402,7 @@ def init_widgets_screen1():
 # All other monitors' bars will display everything but widgets 22 (systray) and 23 (spacer).
 def init_widgets_screen2():
     widgets_screen2 = init_widgets_list()
-    del widgets_screen2[12:16]
+    del widgets_screen2[13:16]
     return widgets_screen2
 
 # For adding transparency to your bar, add (background="#00000000") to the "Screen" line(s)

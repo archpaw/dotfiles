@@ -93,7 +93,11 @@ alias upp='/home/lm/Documentos/git/scripts/arch/update.sh'
 alias fupp='/home/lm/Documentos/git/scripts/arch/full-update.sh'
 alias cdgit='cd /home/lm/Documentos/git/'
 alias cdg='cd .config'
-alias updspd='./.config/autostart/xinputI3.sh'
+alias updspd='/home/lm/.config/autostart/xinputI3.sh'
+alias srcfish='source /home/lm/.config/fish/config.fish'
+alias ffuu='/home/lm/Documentos/git/scripts/arch/full-update.sh' && '/home/lm/Documentos/git/scripts/arch/update.sh' && '/home/lm/.config/autostart/xinputI3.sh'
+#alias --='--noconfirm --needed'
+#alias ---='--noconfirm'
 
 # Replace ls with eza
 alias ls='eza -al --color=always --group-directories-first --icons' # preferred listing

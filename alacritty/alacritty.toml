@@ -1,227 +1,65 @@
-[colors.primary]
-
-background = "#282a36"
-foreground = "#f8f8f2"
-bright_foreground = "#ffffff"
-
-[colors.cursor]
-
-text = "#282a36"
-cursor = "#f8f8f2"
-
-[colors.vi_mode_cursor]
-
-text = "CellBackground"
-cursor = "CellForeground"
-
-[colors.selection]
-
-text = "CellForeground"
-background = "#44475a"
-
-[colors.normal]
-
-black = "#21222c"
-red = "#ff5555"
-green = "#50fa7b"
-yellow = "#f1fa8c"
-blue = "#bd93f9"
-magenta = "#ff79c6"
-cyan = "#8be9fd"
-white = "#f8f8f2"
+live_config_reload = true
 
 [colors.bright]
+black = "#50545B"
+blue = "#6CB8F9"
+cyan = "#5FC0CC"
+green = "#A2CD83"
+magenta = "#D282E7"
+red = "#EA757E"
+white = "#B5BCC9"
+yellow = "#EFCA84"
 
-black = "#6272a4"
-red = "#ff6e6e"
-green = "#69ff94"
-yellow = "#ffffa5"
-blue = "#d6acff"
-magenta = "#ff92df"
-cyan = "#a4ffff"
-white = "#ffffff"
+[colors.normal]
+black = "#32363D"
+blue = "#62AEEF"
+cyan = "#55B6C2"
+green = "#98C379"
+magenta = "#C778DD"
+red = "#E06B74"
+white = "#ABB2BF"
+yellow = "#E5C07A"
 
-[colors.search.matches]
-
-foreground = "#44475a"
-background = "#50fa7b"
-
-[colors.search.focused_match]
-
-foreground = "#44475a"
-background = "#ffb86c"
-
-[colors.footer_bar]
-
-background = "#282a36"
-foreground = "#f8f8f2"
-
-[colors.hints.start]
-
-foreground = "#282a36"
-background = "#f1fa8c"
-
-[colors.hints.end]
-
-foreground = "#f1fa8c"
-background = "#282a36"
-# [colors]
-# draw_bold_text_with_bright_colors = true
-                                   
-# [colors.bright]
-# black = "#5b6268" 
-# blue = "#3071db"
-# cyan = "#46d9ff"
-# green = "#4db5bd"
-# magenta = "#a9a1e1"
-# red = "#da8548"
-# white = "#dfdfdf"
-# yellow = "#ecbe7b"
-
-# [colors.cursor]
-# cursor = "#528bff"
-# text = "CellBackground"
-
-# [colors.normal]
-# black = "#1c1f24"
-# blue = "#51afef"
-# cyan = "#5699af"
-# green = "#98be65"
-# magenta = "#c678dd"
-# red = "#ff6c6b"
-# white = "#abb2bf"
-# yellow = "#da8548"
-
-# [colors.primary]
-# background = "#282c34"
-# foreground = "#bbc2cf"
-
-# [colors.selection]
-# background = "#3e4451"
-# text = "CellForeground"
-
-# [env]
-# TERM = "xterm-256color"
+[colors.primary]
+background = "#1E2128"
+foreground = "#ABB2BF"
 
 [font]
-size = 12.0
+size = 9
 
 [font.bold]
-family = "SauceCodePro Nerd Font Mono"
-style = "Bold"
+family = "JetBrainsMono Nerd Font"
 
 [font.bold_italic]
-family = "SauceCodePro Nerd Font Mono"
-style = "Bold Italic"
+family = "JetBrainsMono Nerd Font"
 
 [font.italic]
-family = "SauceCodePro Nerd Font Mono"
-style = "Italic"
+family = "JetBrainsMono Nerd Font"
 
 [font.normal]
-family = "SauceCodePro Nerd Font Mono"
-style = "Regular"
+family = "JetBrainsMono Nerd Font"
 
-[font.offset]
-x = 0
-y = 1
+[cursor]
+unfocused_hollow = false
 
-[[keyboard.bindings]]
-action = "Paste"
-key = "V"
-mods = "Control|Shift"
+[cursor.style]
+blinking = "On"
+shape = "Block"
 
-[[keyboard.bindings]]
-action = "Copy"
-key = "C"
-mods = "Control|Shift"
-
-[[keyboard.bindings]]
-action = "PasteSelection"
-key = "Insert"
-mods = "Shift"
-
-[[keyboard.bindings]]
-action = "ResetFontSize"
-key = "Key0"
-mods = "Control"
-
-[[keyboard.bindings]]
-action = "IncreaseFontSize"
-key = "Equals"
-mods = "Control"
-
-[[keyboard.bindings]]
-action = "IncreaseFontSize"
-key = "Plus"
-mods = "Control"
-
-[[keyboard.bindings]]
-action = "DecreaseFontSize"
-key = "Minus"
-mods = "Control"
-
-[[keyboard.bindings]]
-action = "ToggleFullscreen"
-key = "F11"
-mods = "None"
-
-[[keyboard.bindings]]
-action = "Paste"
-key = "Paste"
-mods = "None"
-
-[[keyboard.bindings]]
-action = "Copy"
-key = "Copy"
-mods = "None"
-
-[[keyboard.bindings]]
-action = "ClearLogNotice"
-key = "L"
-mods = "Control"
-
-[[keyboard.bindings]]
-chars = "\f"
-key = "L"
-mods = "Control"
-
-[[keyboard.bindings]]
-action = "ScrollPageUp"
-key = "PageUp"
-mode = "~Alt"
-mods = "None"
-
-[[keyboard.bindings]]
-action = "ScrollPageDown"
-key = "PageDown"
-mode = "~Alt"
-mods = "None"
-
-[[keyboard.bindings]]
-action = "ScrollToTop"
-key = "Home"
-mode = "~Alt"
-mods = "Shift"
-
-[[keyboard.bindings]]
-action = "ScrollToBottom"
-key = "End"
-mode = "~Alt"
-mods = "Shift"
-
-[scrolling]
-history = 5000
+[env]
+TERM = "alacritty"
+WINIT_X11_SCALE_FACTOR = "1.0"
 
 [window]
-dynamic_padding = false
-opacity = 1.0
-title = "Alacritty"
+decorations = "full"
+dynamic_title = true
+opacity = 1
+startup_mode = "Windowed"
 
-[window.class]
-general = "Alacritty"
-instance = "Alacritty"
+[window.dimensions]
+columns = 82
+lines = 24
 
 [window.padding]
-x = 6
-y = 6
+x = 30
+y = 30
