@@ -39,7 +39,6 @@ powerline = {
     ]
 }
 
-
 mod = "mod4"                # Sets mod key to SUPER/WINDOWS
 myTerm = "kitty"            # My terminal of choice
 myBrowser = "cromite"       # My browser of choice
@@ -175,8 +174,8 @@ keys = [
         Key([], "v", lazy.spawn(myEmacs + "--eval '(vterm)'"), desc='Emacs Vterm'),
         Key([], "w", lazy.spawn(myEmacs + "--eval '(eww \"distro.tube\")'"), desc='Emacs EWW'),
         Key([], "F4", lazy.spawn("killall emacs"),
-                      lazy.spawn("/usr/bin/emacs --daemon"),
-                      desc='Kill/restart the Emacs daemon')
+                    lazy.spawn("/usr/bin/emacs --daemon"),
+                    desc='Kill/restart the Emacs daemon')
     ]),
     # Dmenu/rofi scripts launched using the key chord SUPER+p followed by 'key'
     KeyChord([mod], "p", [
@@ -205,8 +204,7 @@ group_names = ["1", "2", "3", "4"]
 #group_labels = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
 # group_labels = ["DEV", "WWW", "SYS", "MUS", "VBOX", "CHAT", "DOC", "VID", "GFX", "MISC"]
 # group_labels = ["", "", "", "", "", "", "𝦝", "", "", "⛨"]
-group_labels = ["", "", "", "", "", "", "𝦝", "", "", "⛨"]
-#group_labels = [" ", " ", " ", " ", " ", " ", "⛨ ", " ", " "]
+group_labels = ["", "", "", ""]
 
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall"]
 
@@ -254,7 +252,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="Ubuntu Bold",
+    font="Ubuntu",
     fontsize = 12,
     padding = 0,
     background=colors[0]
@@ -288,7 +286,7 @@ def init_widgets_list():
                 ),
 
                 widget.GroupBox(
-                    font="JetBrainsMono Nerd Font",
+                    font="SauceCodePro Nerd Font",
                     fontsize=16,
                     borderwidth=6,
                     highlight_method='block',
@@ -338,7 +336,7 @@ def init_widgets_list():
                 widget.TextBox(
                     fmt='Search',
                     background=colors[9],
-                    font="JetBrainsMono Nerd Font Bold",
+                    font="SauceCodePro Nerd Font",
                     fontsize=13,
                     foreground=colors[2],
                     mouse_callbacks={"Button1": search},
@@ -350,7 +348,7 @@ def init_widgets_list():
 
                 widget.WindowName(
                     background=colors[0],
-                    font="JetBrainsMono Nerd Font Bold",
+                    font="SauceCodePro Nerd Font",
                     fontsize=13,
                     empty_group_string="Desktop",
                     max_chars=130,
@@ -388,35 +386,10 @@ def init_widgets_list():
                     background=colors[0],
                     format='{MemUsed: .0f}{mm}',
                     foreground=colors[2],
-                    font="JetBrainsMono Nerd Font Bold",
+                    font="SauceCodePro Nerd Font",
                     fontsize=13,
                     update_interval=5,
                 ),
-
-                # widget.Image(
-                #     filename='~/.config/qtile/Assets/2.png',
-                # ),
-
-                # widget.Spacer(
-                #     length=8,
-                #     background=colors[0],
-                # ),
-
-                # widget.TextBox(
-                #     text=" ",
-                #     font="Font Awesome 6 Free Solid",
-                #     fontsize=13,
-                #     background=colors[0],
-                #     foreground=colors[2],
-                # ),
-
-                # widget.Battery(
-                #     font="JetBrainsMono Nerd Font Bold",
-                #     fontsize=13,
-                #     background=colors[0],
-                #     foreground=colors[2],
-                #     format='{percent:2.0%}',
-                # ),
 
                 widget.Image(
                     filename='~/.config/qtile/Assets/2.png',
@@ -436,7 +409,7 @@ def init_widgets_list():
                 ),
 
                 widget.Volume(
-                    font="JetBrainsMono Nerd Font Bold",
+                    font="SauceCodePro Nerd Font",
                     fontsize=13,
                     background=colors[0],
                     foreground=colors[2],
@@ -459,7 +432,7 @@ def init_widgets_list():
                     format='%I:%M %p',
                     background=colors[9],
                     foreground=colors[2],
-                    font="JetBrainsMono Nerd Font Bold",
+                    font="SauceCodePro Nerd Font",
                     fontsize=13,
                 ),
 
