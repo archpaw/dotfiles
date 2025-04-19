@@ -1,20 +1,20 @@
 /*---------------------------------*\
-         Configuration Section          
+         Configuration Section
 \*---------------------------------*/
 configuration {
     show-icons:                 false;
 }
 
 /*---------------------------------*\
-         Global Properties Section          
+         Global Properties Section
 \*---------------------------------*/
 * {
     font:                        "JetBrains Mono Nerd Font 11";
-    background:                  #282738;  
-    background-alt:              #282738;  
-    foreground:                  #D8DEF5;  
-    selected:                    #A491AD;  
-    active:                      #A893D4; 
+    background:                  #282738;
+    background-alt:              #282738;
+    foreground:                  #D8DEF5;
+    selected:                    #A491AD;
+    active:                      #A893D4;
     urgent:                      #91B1F0;
 }
 
@@ -23,7 +23,7 @@ USE_BUTTONS=YES
 */
 
 /*---------------------------------*\
-         Main Window Section          
+         Main Window Section
 \*---------------------------------*/
 window {
     transparency:                "real";
@@ -43,7 +43,7 @@ window {
 }
 
 /*---------------------------------*\
-         Main Box Section          
+         Main Box Section
 \*---------------------------------*/
 mainbox {
     enabled:                     true;
@@ -59,7 +59,7 @@ mainbox {
 }
 
 /*---------------------------------*\
-         Inputbar Section          
+         Inputbar Section
 \*---------------------------------*/
 inputbar {
     enabled:                     true;
@@ -91,7 +91,7 @@ prompt {
 }
 
 /*---------------------------------*\
-         Listview Section          
+         Listview Section
 \*---------------------------------*/
 listview {
     enabled:                     true;
@@ -104,7 +104,6 @@ listview {
     reverse:                     false;
     fixed-height:                true;
     fixed-columns:               true;
-    
     spacing:                     15px;
     margin:                      15px;
     padding:                     60px 30px 20px;
@@ -113,7 +112,7 @@ listview {
 }
 
 /*---------------------------------*\
-         Elements Section          
+         Elements Section
 \*---------------------------------*/
 element {
     enabled:                     true;
@@ -129,7 +128,7 @@ element-text {
     text-color:                  inherit;
     cursor:                      inherit;
     vertical-align:              0.5;
-    horizontal-align:            0.5;
+    horizontal-align:            0.4;
 }
 element selected.normal {
     background-color:            @selected;
@@ -137,7 +136,7 @@ element selected.normal {
 }
 
 /*---------------------------------*\
-         Message Section          
+         Message Section
 \*---------------------------------*/
 message {
     enabled:                     true;

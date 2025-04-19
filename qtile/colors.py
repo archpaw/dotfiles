@@ -2,6 +2,20 @@
 # Then, you can use RGBA color codes to add transparency to the colors below.
 # For ex: colors = [["#282c34ee", "#282c34dd"], ...
 
+Cozytile = [
+    ["#353446", "#353446"], # color[0]bg
+    ["#4B427E", "#4B427E"], # color[1]fg
+    ["#CAA9E0", "#CAA9E0"], # color[2]
+    ["#91B1F0", "#91B1F0"], # color[3]
+    ["#98be65", "#98be65"], # color[4]
+    ["#da8548", "#da8548"], # color[5]
+    ["#88C0D0", "#88C0D0"], # color[6]
+    ["#70c0ba", "#70c0ba"], # color[7]
+    ["#c678dd", "#c678dd"], # color[8]
+    ["#282738", "#282738"]  # color[9]
+    ]
+
+
 DoomOne = [
     ["#282c34", "#282c34"], # bg
     ["#bbc2cf", "#bbc2cf"], # fg
