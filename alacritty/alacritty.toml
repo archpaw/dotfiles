@@ -1,65 +1,52 @@
-live_config_reload = true
-
 [colors.bright]
-black = "#50545B"
-blue = "#6CB8F9"
-cyan = "#5FC0CC"
-green = "#A2CD83"
-magenta = "#D282E7"
-red = "#EA757E"
-white = "#B5BCC9"
-yellow = "#EFCA84"
+black = "#282a36"
+blue = "#6272a4"
+cyan = "#8be9fd"
+green = "#50fa7b"
+magenta = "#bd93f9"
+red = "#ff5555"
+white = "#f8f8f2"
+yellow = "#f1fa8c"
 
 [colors.normal]
-black = "#32363D"
-blue = "#62AEEF"
-cyan = "#55B6C2"
-green = "#98C379"
-magenta = "#C778DD"
-red = "#E06B74"
-white = "#ABB2BF"
-yellow = "#E5C07A"
+black = "#282a36"
+blue = "#6272a4"
+cyan = "#8be9fd"
+green = "#50fa7b"
+magenta = "#bd93f9"
+red = "#ff5555"
+white = "#f8f8f2"
+yellow = "#f1fa8c"
 
 [colors.primary]
-background = "#1E2128"
-foreground = "#ABB2BF"
+background = "#282a36"
+foreground = "#f8f8f2"
 
 [font]
-size = 9
+size = 11.0
 
 [font.bold]
-family = "JetBrainsMono Nerd Font"
+family = "SauceCodePro Nerd Font Mono"
+style = "Bold"
 
 [font.bold_italic]
-family = "JetBrainsMono Nerd Font"
+family = "SauceCodePro Nerd Font Mono"
+style = "Bold Italic"
 
 [font.italic]
-family = "JetBrainsMono Nerd Font"
+family = "SauceCodePro Nerd Font Mono"
+style = "Italic"
 
 [font.normal]
-family = "JetBrainsMono Nerd Font"
+family = "SauceCodePro Nerd Font Mono"
+style = "Regular"
 
-[cursor]
-unfocused_hollow = false
+[[keyboard.bindings]]
+action = "ToggleFullscreen"
+key = "F11"
 
-[cursor.style]
-blinking = "On"
-shape = "Block"
-
-[env]
-TERM = "alacritty"
-WINIT_X11_SCALE_FACTOR = "1.0"
+[scrolling]
+history = 50000
 
 [window]
-decorations = "full"
-dynamic_title = true
 opacity = 1
-startup_mode = "Windowed"
-
-[window.dimensions]
-columns = 82
-lines = 24
-
-[window.padding]
-x = 30
-y = 30

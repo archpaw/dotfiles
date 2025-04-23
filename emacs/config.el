@@ -232,7 +232,7 @@
             :wk "Open user-emacs-directory in dired")
     "f d" '(find-grep-dired :wk "Search for string in files in DIR")
     "f f" '((lambda () (interactive)
-              (find-file "/usr/share/cachyos-fish-config/cachyos-config.fish")) 
+             (find-file "/usr/share/cachyos-fish-config/cachyos-config.fish")) 
             :wk "Open fish config file")
 
     "f g" '(counsel-grep-or-swiper :wk "Search for string current file")
@@ -249,7 +249,10 @@
             :wk "Open qtile config file")
     "f r" '(counsel-recentf :wk "Find recent files")
     "f u" '(sudo-edit-find-file :wk "Sudo find file")
-    "f U" '(sudo-edit :wk "Sudo edit file"))
+    "f U" '(sudo-edit :wk "Sudo edit file")
+    "f z" '((lambda () (interactive)
+             (find-file "~/.zshrc")) 
+            :wk "Open fish config file"))
 
   (dt/leader-keys
     "g" '(:ignore t :wk "Git")    
@@ -601,7 +604,7 @@
   (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
         doom-themes-enable-italic t) ; if nil, italics is universally disabled
   ;; Sets the default theme to load!!! 
-  (load-theme 'doom-one t)
+  (load-theme 'doom-dracula t)
   ;; Enable custom neotree theme (all-the-icons must be installed!)
   (doom-themes-neotree-config)
   ;; Corrects (and improves) org-mode's native fontification.

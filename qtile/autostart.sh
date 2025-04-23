@@ -7,8 +7,8 @@ COLORSCHEME=DoomOne
 run variety &
 run xfce4-power-manager &
 numlockx on &
-#variety &
 feh --bg-fill --randomize ~/Documentos/git/walls/abstract ~/Documentos/git/walls/abstract/
+variety &
 numlockx on &
 lxsession &
 picom --daemon &

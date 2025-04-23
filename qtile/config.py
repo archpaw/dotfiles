@@ -40,10 +40,10 @@ powerline = {
 }
 
 mod = "mod4"                # Sets mod key to SUPER/WINDOWS
-myTerm = "kitty"            # My terminal of choice
-myBrowser = "cromite"       # My browser of choice
-myBrowser2 = "waterfox"     # My browser of choice
-myFiles = "nautilus"        # My file manager of choice
+myTerm = "alacritty"            # My terminal of choice
+myBrowser = "brave"       # My browser of choice
+myBrowser2 = "floorp"     # My browser of choice
+myFiles = "thunar"        # My file manager of choice
 myCode = "code"             # vscode
 myMusic = "spotify"         # spotify
 myEmacs = "emacsclient -c -a 'emacs' " # The space at the end is IMPORTANT!
@@ -286,18 +286,24 @@ def init_widgets_list():
                 ),
 
                 widget.GroupBox(
-                    font="SauceCodePro Nerd Font",
+                    #font="SauceCodePro Nerd Font",
                     fontsize=16,
-                    borderwidth=6,
+                    #width=100,
+                    borderwidth=0,
                     highlight_method='block',
+                    spacing=True,
+                    #margin=6,
+                    padding=6,
+                    center_aligned=True,
                     active=colors[2],
                     block_highlight_text_color=colors[3],
                     highlight_color=colors[0],
-                    inactive=colors[9],                    foreground=colors[1],
+                    inactive=colors[9],
+                    foreground=colors[1],
                     background=colors[0],
-                    this_current_screen_border=colors[0],
+                    this_current_screen_border=colors[1],
                     this_screen_border=colors[0],
-                    other_current_screen_border=colors[0],
+                    other_current_screen_border=colors[1],
                     other_screen_border=colors[0],
                     urgent_border=colors[0],
                     rounded=True,

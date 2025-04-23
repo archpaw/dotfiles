@@ -19,11 +19,12 @@
      default))
  '(package-selected-packages
    '(colorful-mode dockerfile-mode dracula-theme emmet-mode fish-mode
-		   flycheck format-sql haskell-mode hyprlang-ts-mode
-		   i3wm-config-mode js-react-redux-yasnippets js2-mode
-		   json-mode kaolin-themes magit markdown-mode
-		   markdown-toc markdownfmt python-mode sqlformat
-		   sqlup-mode toml-mode typescript-mode web-mode
+		   flycheck fontawesome format-sql haskell-mode
+		   hyprlang-ts-mode i3wm-config-mode
+		   js-react-redux-yasnippets js2-mode json-mode
+		   kaolin-themes magit markdown-mode markdown-toc
+		   markdownfmt python-mode sqlformat sqlup-mode
+		   toml-mode treemacs typescript-mode web-mode
 		   yasnippet)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

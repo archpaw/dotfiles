@@ -38,7 +38,7 @@ if test -d ~/Applications/depot_tools
 end
 
 
-## Functions
+# Functions
 # Functions needed for !! and !$ https://github.com/oh-my-fish/plugin-bang-bang
 function __history_previous_command
   switch (commandline -t)
@@ -161,7 +161,7 @@ end
 
 function pomodoro
     if test (count $argv) -eq 0
-        echo "Uso: pomodoro [work|break]"
+        echo "Uso: pomodoro [trabalho|descanso]"
         return 1
     end
 
@@ -171,9 +171,9 @@ function pomodoro
     set -l music_url "https://www.youtube.com/watch?v=jfKfPfyJRdk"
 
     switch $pomo_type
-        case "work"
+        case "trabalho"
             set duration 45
-        case "break"
+        case "descanso"
             set duration 10
         case '*'
             echo "Tipo inválido: $pomo_type"
@@ -183,7 +183,7 @@ function pomodoro
     echo "🎧 Iniciando sessão: $pomo_type por $duration minutos" | lolcat
 
     if test -n "$music_url"
-        mpv --quiet --no-video --volume=20 $music_url >/dev/null 2>&1 &
+        mpv --quiet --no-video --volume=100 $music_url >/dev/null 2>&1 &
         set -g music_pid $last_pid
     end
 
@@ -193,13 +193,15 @@ function pomodoro
     if set -q music_pid
         kill $music_pid 2>/dev/null
     end
+    
+    spd-say "sessão de '$pomo_type' finalizada"
 
-    spd-say "'$pomo_type' session done"
-
-    if type -q notify-send
-        notify-send "⏰ Pomodoro finalizado!" "Sessão '$pomo_type' de $duration minutos terminou."
-    end
+    #if type -q notify-send
+    #    notify-send "⏰ Pomodoro finalizado!" "Sessão '$pomo_type' de $duration minutos terminou."
+    #end
 end
 
+alias wo='pomodoro trabalho'
+alias br='pomodoro descanso'
 
 
