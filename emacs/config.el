@@ -232,7 +232,7 @@
             :wk "Open user-emacs-directory in dired")
     "f d" '(find-grep-dired :wk "Search for string in files in DIR")
     "f f" '((lambda () (interactive)
-             (find-file "/usr/share/cachyos-fish-config/cachyos-config.fish")) 
+             (find-file "~/.config/fish/config.fish")) 
             :wk "Open fish config file")
 
     "f g" '(counsel-grep-or-swiper :wk "Search for string current file")
@@ -243,6 +243,9 @@
               (find-file "~/.config/emacs/init.el")) 
             :wk "Open emacs init.el")
     "f j" '(counsel-file-jump :wk "Jump to a file below current directory")
+    "f k" '((lambda () (interactive)
+              (find-file "~/.config/kitty/kitty.conf")) 
+            :wk "Open kitty config file")
     "f l" '(counsel-locate :wk "Locate a file")
     "f q" '((lambda () (interactive)
               (find-file "~/.config/qtile/config.py")) 

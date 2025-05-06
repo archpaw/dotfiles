@@ -95,7 +95,7 @@ end
 
 ## Useful aliases
 #Leonam
-alias upp='/home/lm/Documentos/git/scripts/arch/update.sh'
+alias upp='/home/lm/Documentos/git/scripts/arch/update.sh && updspd'
 alias fupp='/home/lm/Documentos/git/scripts/arch/full-update.sh'
 alias cdgit='cd /home/lm/Documentos/git/'
 alias cdg='cd .config'
@@ -103,6 +103,7 @@ alias updspd='/home/lm/.config/autostart/xinputI3.sh'
 alias srcfish='source /home/lm/.config/fish/config.fish'
 alias ffuu='/home/lm/Documentos/git/scripts/arch/full-update.sh && /home/lm/Documentos/git/scripts/arch/update.sh && /home/lm/.config/autostart/xinputI3.sh'
 alias fupd='fupp && upp & updspd'
+alias clone='git clone'
 #alias --='--noconfirm --needed'
 #alias ---='--noconfirm'
 
@@ -179,27 +180,26 @@ function pomodoro
         case "trabalho"
             set duration 45
         case "descanso"
-            set duration 10
+            set duration 5
         case '*'
             echo "Tipo inválido: $pomo_type"
             return 1
     end
-
-    echo "🎧 Iniciando sessão: $pomo_type por $duration minutos" | lolcat
-
-    if test -n "$music_url"
-        mpv --quiet --no-video --volume=100 $music_url >/dev/null 2>&1 &
-        set -g music_pid $last_pid
-    end
-
+    echo "Iniciando sessão: $pomo_type por $duration minutos" | lolcat
     timer {$duration}m
 
+    #echo "🎧 Iniciando sessão: $pomo_type por $duration minutos" | lolcat
+    #if test -n "$music_url"
+    #    mpv --quiet --no-video --volume=100 $music_url >/dev/null 2>&1 &
+    #    set -g music_pid $last_pid
+    #end
+
     # Encerra a música quando o timer termina normalmente
-    if set -q music_pid
-        kill $music_pid 2>/dev/null
-    end
+    #if set -q music_pid
+    #    kill $music_pid 2>/dev/null
+    #end
     
-    spd-say "sessão de '$pomo_type' finalizada"
+    #spd-say "sessão de '$pomo_type' finalizada"
 
     #if type -q notify-send
     #    notify-send "⏰ Pomodoro finalizado!" "Sessão '$pomo_type' de $duration minutos terminou."

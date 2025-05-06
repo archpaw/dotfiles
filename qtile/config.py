@@ -40,12 +40,12 @@ powerline = {
 }
 
 mod = "mod4"                # Sets mod key to SUPER/WINDOWS
-myTerm = "alacritty"            # My terminal of choice
+myTerm = "kitty"            # My terminal of choice
 myBrowser = "brave"       # My browser of choice
-myBrowser2 = "floorp"     # My browser of choice
+myBrowser2 = "vivaldi"     # My browser of choice
 myFiles = "thunar"        # My file manager of choice
 myCode = "code"             # vscode
-myMusic = "spotify"         # spotify
+myMusic = "flatpak run com.spotify.Client"         # spotify
 myEmacs = "emacsclient -c -a 'emacs' " # The space at the end is IMPORTANT!
 logOut = "sh -c ~/.config/rofi/scripts/power" #logout menu option - about to change it to rofi power script
 # logOut = "archlinux-logout" #logout menu option - about to change it to rofi power script
@@ -199,12 +199,12 @@ keys = [
 
 groups = []
 group_names = ["1", "2", "3", "4"]
-# group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
-
+#group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 #group_labels = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
-# group_labels = ["DEV", "WWW", "SYS", "MUS", "VBOX", "CHAT", "DOC", "VID", "GFX", "MISC"]
-# group_labels = ["", "", "", "", "", "", "𝦝", "", "", "⛨"]
+#group_labels = ["DEV", "WWW", "SYS", "MUS", "VBOX", "CHAT", "DOC", "VID", "GFX", "MISC"]
+#group_labels = ["", "", "", "", "", "", "𝦝", "", "", "⛨"]
 group_labels = ["", "", "", ""]
+group_labels = ["", "", "", ""]
 
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall"]
 
@@ -287,13 +287,14 @@ def init_widgets_list():
 
                 widget.GroupBox(
                     #font="SauceCodePro Nerd Font",
+                    font="font awesome",
                     fontsize=16,
                     #width=100,
-                    borderwidth=0,
+                    borderwidth=2,
                     highlight_method='block',
                     spacing=True,
                     #margin=6,
-                    padding=6,
+                    padding=4,
                     center_aligned=True,
                     active=colors[2],
                     block_highlight_text_color=colors[3],
@@ -435,7 +436,7 @@ def init_widgets_list():
                 ),
 
                 widget.Clock(
-                    format='%I:%M %p',
+                    format='%a %d-%m-%y - %I:%M %p',
                     background=colors[9],
                     foreground=colors[2],
                     font="SauceCodePro Nerd Font",
@@ -463,8 +464,8 @@ def init_widgets_screen2():
 # For ex: Screen(top=bar.Bar(widgets=init_widgets_screen2(), background="#00000000", size=24)),
 
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), margin=[8, 12, 0, 12], size=28)),
-            Screen(top=bar.Bar(widgets=init_widgets_screen2(), margin=[8, 12, 0, 12], size=28)),
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), margin=[8, 8, 0, 8], size=28)),
+            Screen(top=bar.Bar(widgets=init_widgets_screen2(), margin=[8, 8, 0, 8], size=28)),
             Screen(top=bar.Bar(widgets=init_widgets_screen2(), margin=[8, 12, 0, 12], size=28))]
 
 if __name__ in ["config", "__main__"]:

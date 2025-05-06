@@ -23,9 +23,9 @@
 		   hyprlang-ts-mode i3wm-config-mode
 		   js-react-redux-yasnippets js2-mode json-mode
 		   kaolin-themes magit markdown-mode markdown-toc
-		   markdownfmt python-mode sqlformat sqlup-mode
-		   toml-mode treemacs typescript-mode web-mode
-		   yasnippet)))
+		   markdownfmt prettier prettier-js prettier-rc
+		   python-mode sqlformat sqlup-mode toml-mode treemacs
+		   typescript-mode web-mode yasnippet)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

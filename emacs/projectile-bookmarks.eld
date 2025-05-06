@@ -1,1 +1,1 @@
-("~/.config/" "~/Documentos/aulas/+prati/node_modules/prompt-sync/" "~/.oh-my-zsh/" "~/Documentos/git/scripts/" "~/Documentos/git/qtileDotfiles/Cozytile/" "~/Documentos/git/archpaw/" "~/Documentos/git/dotfiles/")
+("~/Documentos/git/.dotfiles/" "~/.config/" "~/Documentos/git/scripts/" "~/Documentos/git/maisPraTi/" "~/Documentos/aulas/+prati/node_modules/prompt-sync/" "~/.oh-my-zsh/" "~/Documentos/git/qtileDotfiles/Cozytile/" "~/Documentos/git/archpaw/" "~/Documentos/git/dotfiles/")
